@@ -15,7 +15,8 @@ description: "If you use Remote Desktop Services (RDS) to provide shared compute
 
 If you use Remote Desktop Services (RDS) to provide shared computers to users in your organization, you can install Office 365 ProPlus on those computers. But, you have to use the Office Deployment Tool and enable [shared computer activation](overview-of-shared-computer-activation-for-office-365-proplus.md) to do the installation.
 
-## Office 365 ProPlus is supported on user-dedicated virtual desktop infrastructure (VDI).
+> [!NOTE]
+> Office 365 ProPlus is supported on user-dedicated virtual desktop infrastructure (VDI) and only supports Remote Desktop Services (RDS) when purchased through a Volume Licensing Program.
 
 The following are two common RDS scenarios:
 
@@ -31,7 +32,7 @@ The following is a list of prerequisites that you need to deploy Office 365 ProP
 - An Office 365 plan that includes Office 365 ProPlus. Also, make sure that you [assign each user a license](https://support.office.com/article/997596b5-4173-4627-b915-36abac6786dc) for Office 365 ProPlus.
 
     > [!NOTE]
-    > You also can use RDS to deploy Project Online Desktop Client or Visio Online Plan 2 (previously named Visio Pro for Office 365), if you have a subscription plan that includes those products. 
+    > You also can use RDS to deploy Project Online Desktop Client or Visio Online Plan 2 (previously named Visio Pro for Office 365), if you have a subscription plan that includes those products.
 
 - The Office Deployment Tool, which is available on the [Microsoft Download Center](https://go.microsoft.com/fwlink/p/?LinkID=626065). You can download the Office 365 ProPlus software to your local network by using the [Office Deployment Tool](overview-of-the-office-2016-deployment-tool.md).
 
@@ -69,7 +70,7 @@ Here are the basic steps of how to install Office 365 ProPlus on an RDS server:
 3. [Create a configuration.xml file](configuration-options-for-the-office-2016-deployment-tool.md) that includes the following lines:
 
    ```xml
-   <Display Level="None" AcceptEULA="True" /> 
+   <Display Level="None" AcceptEULA="True" />
    <Property Name="SharedComputerLicensing" Value="1" />
    ```
 
@@ -87,7 +88,7 @@ At this point, users can connect to the RD Session Host server and use Office 36
 In this scenario, you install Office 365 ProPlus as part of a client operating system image, such as one running Windows 8.1 or Windows 10. Then, you use RDS and Hyper-V to create a group of virtual machines based on that image. These virtual machines can be shared by multiple users. In RDS, this is known as either a virtual desktop pool or a pooled virtual desktop collection, depending on which version of RDS that you're using.
 
 > [!NOTE]
-> You can also use RDS to assign a virtual machine to a specific user. RDS calls that a personal virtual desktop. In that scenario, you don't use shared computer activation, because the virtual machine isn't shared among multiple users. 
+> You can also use RDS to assign a virtual machine to a specific user. RDS calls that a personal virtual desktop. In that scenario, you don't use shared computer activation, because the virtual machine isn't shared among multiple users.
 
 Here are the basic steps of how to configure RDS to deploy Office 365 ProPlus on a shared virtual machine:
 
@@ -122,5 +123,4 @@ After you've completed all the RDS configuration steps, users can connect to any
 [Remote Desktop Services Overview (Windows Server 2012 and Windows Server 2012 R2)](https://go.microsoft.com/fwlink/p/?LinkID=268149)
 
 [Office Applications Service Description](https://docs.microsoft.com/office365/servicedescriptions/office-applications-service-description/office-applications-service-description)
-
 
